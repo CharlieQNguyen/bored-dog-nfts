@@ -2,18 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { MantineProvider } from "@mantine/core";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home } from "./views/Home/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <MantineProvider
-      theme={{ colorScheme: "dark" }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
-      <Home />
-    </MantineProvider>
+    <QueryClientProvider client={queryClient}>
+      <MantineProvider
+        theme={{ colorScheme: "dark" }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <Home />
+      </MantineProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

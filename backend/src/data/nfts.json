@@ -1,12 +1,20 @@
 [
   {
-    "id": "Hu2yzIXNuIlxL43y2Narx",
-    "name": "TEST",
-    "price": "0.001 DTX"
+    "id": "u7ZtR-rCXRyIiQTPmwmll",
+    "name": "DOG #001",
+    "price": "0.001 DTX",
+    "url": "https://enlightenment-series-2022.s3.amazonaws.com/dog-1.jpg"
   },
   {
-    "id": "bt-L48EaYXvxU7RzVDXKP",
-    "name": "TEST",
-    "price": "0.001 DTX"
+    "id": "mZSYxZB8XRBQ8rsyH_Fow",
+    "name": "DOG #002",
+    "price": "0.005 DTX",
+    "url": "https://enlightenment-series-2022.s3.amazonaws.com/dog-2.jpg"
+  },
+  {
+    "id": "Hc_-HJQCyhJKa9uDM7zbi",
+    "name": "DOG #003",
+    "price": "0.003 DTX",
+    "url": "https://enlightenment-series-2022.s3.amazonaws.com/dog-3.jpg"
   }
 ]

@@ -7,16 +7,16 @@ import {
   Text,
 } from "@mantine/core";
 
-export const Card = () => {
+export const Card = ({ title, price, url }) => {
   return (
-    <MantineCard maw={400} shadow="lg">
+    <MantineCard shadow="lg">
       <MantineCard.Section>
-        <Image src="https://enlightenment-series-2022.s3.amazonaws.com/dog-1.jpg" />
+        <Image src={url} />
       </MantineCard.Section>
       <Group position="apart" mt="md" mb="xs">
-        <Text weight={700}>Dog #0001</Text>
+        <Text weight={700}>{title}</Text>
         <Badge color="blue" variant="light" size="lg">
-          0.001 DTX
+          {price}
         </Badge>
       </Group>
       <Button variant="light" color="orange" fullWidth mt="md" radius="md">
