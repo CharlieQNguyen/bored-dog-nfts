@@ -17,7 +17,7 @@ export const Home = () => {
         ) : (
           <Grid>
             {nfts.map((nft) => (
-              <Grid.Col xs={12} sm={6} md={4}>
+              <Grid.Col xs={12} sm={6} md={4} key={nft.id}>
                 <Card title={nft.name} price={nft.price} url={nft.url} />
               </Grid.Col>
             ))}
