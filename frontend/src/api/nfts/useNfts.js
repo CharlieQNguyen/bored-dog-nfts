@@ -3,8 +3,4 @@ import { nftsAxios } from "./axios";
 
 const getNfts = async () => (await nftsAxios.get("/")).data;
 
-export const useNfts = () =>
-  useQuery({
-    queryKey: ["nfts"],
-    queryFn: getNfts,
-  });
+export const useNfts = () => useQuery(["nfts"], getNfts);

@@ -4,6 +4,7 @@ import {
   createStyles,
   Header as MantineHeader,
 } from "@mantine/core";
+import { subscribe } from "../../utils/subscribe";
 
 const useStyles = createStyles(() => ({
   header: {
@@ -17,6 +18,10 @@ const useStyles = createStyles(() => ({
 export const Header = () => {
   const { classes } = useStyles();
 
+  const handleClick = () => {
+    subscribe();
+  };
+
   return (
     <MantineHeader height={80}>
       <Container className={classes.header}>
@@ -28,6 +33,7 @@ export const Header = () => {
             size="lg"
             variant="gradient"
             gradient={{ from: "orange", to: "red" }}
+            onClick={handleClick}
           >
             Subscribe
           </Button>
