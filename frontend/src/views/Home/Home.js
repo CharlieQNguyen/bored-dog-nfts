@@ -3,9 +3,11 @@ import { useNfts } from "../../api/nfts/useNfts";
 import { Card } from "../../components/Card/Card";
 import { Header } from "../../components/Header/Header";
 import { Hero } from "../../components/Hero/Hero";
+import { useNotifications } from "../../hooks/useNotifications";
 
 export const Home = () => {
   const { data: nfts, isLoading } = useNfts();
+  useNotifications();
 
   return (
     <>

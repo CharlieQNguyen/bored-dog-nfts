@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
-const channel = new BroadcastChannel("notification-channel");
+const channel = new BroadcastChannel("notifications-channel");
 
 self.addEventListener("push", (event) => {
   const data = event.data.json();
@@ -26,7 +26,7 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
 
-  if (clients.openWindow && event.notification.data !== null) {
-    clients.openWindow(`/events/${event.notification.data}`);
+  if (clients.openWindow) {
+    clients.openWindow("/");
   }
 });
