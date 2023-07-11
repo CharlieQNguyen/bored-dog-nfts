@@ -6,12 +6,14 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home } from "./views/Home/Home";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
 
 root.render(
   <QueryClientProvider client={queryClient}>
+    <ReactQueryDevtools initialIsOpen={false} />
     <MantineProvider
       theme={{ colorScheme: "dark" }}
       withGlobalStyles
