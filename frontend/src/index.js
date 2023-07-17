@@ -4,26 +4,31 @@ import reportWebVitals from "./reportWebVitals";
 import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home } from "./views/Home/Home";
+import { Main } from "./views/Home/Main";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
 
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <ReactQueryDevtools initialIsOpen={false} />
-    <MantineProvider
-      theme={{ colorScheme: "dark" }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
-      <NotificationsProvider>
-        <Home />
-      </NotificationsProvider>
-    </MantineProvider>
-  </QueryClientProvider>
+  <React.StrictMode>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <MantineProvider
+          theme={{ colorScheme: "dark" }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
+          <NotificationsProvider>
+            <Main />
+          </NotificationsProvider>
+        </MantineProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

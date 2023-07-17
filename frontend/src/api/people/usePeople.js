@@ -3,4 +3,4 @@ import { peopleAxios } from "./axios";
 
 const getPeople = async () => (await peopleAxios.get("/people")).data;
 
-export const usePeople = () => useQuery(["people", getPeople]);
+export const usePeople = () => useQuery(["people"], getPeople);
